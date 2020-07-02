@@ -17,4 +17,4 @@
 
 ## Où puis-je trouver la documentation de Koroï ?
 
-`-` La documentation de KoroïBot est disponible juste **>> [ici](https://nyfos.gitbook.io/koroibot/) <<** !
+`-` La documentation de KoroïBot est disponible juste **[ici](https://nyfos.gitbook.io/koroibot/)** !
