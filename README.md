@@ -3,9 +3,13 @@
 ## À quoi sert ce répertoire GitHub ?
 
 `-` Ce répertoire GitHub sert principalement à poster des bugs et à communiquer avec la communauté de KoroïBot
+
 `-` Vous pourrez également trouver ici de nombreux exemples de codes
+
 `-` Si vous avez besoin d'aide, posez votre question à la communauté ! :D
+
 `-` Si vous souhaitez contribuer au développement de Koroï ou d'autres bots, n'hésitez pas à ajouter des fichiers de codes JavaScript, HTML, etc... ou simplement des tutoriels de développement dans le domaine de votre choix afin d'aider d'autres membres de la communauté !
+
 
 ## J'ai rencontré un bug avec Koroï, que dois-je faire ?
 
