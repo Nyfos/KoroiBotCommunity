@@ -11,7 +11,7 @@ assignees: Nyfos
 Une description claire et concise du bug
 
 **Le bug concerne-t-il une commande, si oui, laquelle ?**
-Oui, il concerne la commande K! ...
+Oui, il concerne la commande `/...`
 
 **Comment reproduire le bug**
 1. Créer un salon '...'
