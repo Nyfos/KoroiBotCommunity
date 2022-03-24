@@ -15,7 +15,7 @@ on:
 jobs:
   feature_request:
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.event.issue.title, "[FEATURE_REQUEST]") }}
+    if: ${{ startsWith(github.event.issue.title, [FEATURE_REQUEST]) }}
     steps:
       - name: Thank user
         uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
