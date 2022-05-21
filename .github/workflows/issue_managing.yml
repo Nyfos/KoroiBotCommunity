@@ -25,9 +25,8 @@ jobs:
     needs:
       - process
     env:
-      data: ${{ needs.process.steps.parse.outputs.data }}
+      data: ${{ needs.process.outputs.data }}
     steps:
-      - run: echo ${{ needs.process.outputs.data }}
       - uses: actions/checkout@v2
       - name: Adding mod label
         if: contains(${{ env.data.bot-s-concerne-s-par-le-bug.text }}, 'KoroïMod')
@@ -85,21 +84,21 @@ jobs:
     needs:
       - process
     env:
-      data: ${{ needs.process.steps.parse.outputs.data }}
+      data: ${{ needs.process.outputs.data }}
     steps:
       - uses: actions/checkout@v2
       - name: Adding mod label
-        if: contains(env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'KoroïMod')
+        if: contains(${{ env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text }}, 'KoroïMod')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mod
       - name: Adding bot support label
-        if: contains(env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'Bot Support')
+        if: contains(${{ env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text }}, 'Bot Support')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: bot support
       - name: Adding mahoku label
-        if: contains(env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'Mahoku')
+        if: contains(${{ env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text }}, 'Mahoku')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mahoku
