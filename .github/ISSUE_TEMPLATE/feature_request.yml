@@ -1,6 +1,9 @@
 name: Demande de fonctionnalité
 description: Demander une nouvelle fonctionnalité
+title : "[FEATURE_REQUEST]: "
 labels: [demande de fonctionnalité]
+assignees:
+  - Nyfos
 body:
   - type: markdown
     attributes:
