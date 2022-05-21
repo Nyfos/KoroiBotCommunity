@@ -14,9 +14,9 @@ body:
       label: Pour quel(s) bot(s) cette demande de fonctionnalité est-elle destinée?
       description: "Conseil: vous pouvez sélectionner plusieurs bots"
       options:
-        - KoroïMod
-        - Support KoroïMod
       # - Mahoku
+        - KoroïMod
+        - Bot Support
       multiple: true
     validations:
       required: true
