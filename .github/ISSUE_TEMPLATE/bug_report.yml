@@ -1,0 +1,104 @@
+name: Signaler un bug
+description: Signaler un comportement incorrect ou inattendu
+title: "[BUG]: "
+labels: [bug]
+assignees:
+  - Nyfos
+body:
+  - type: markdown
+    attributes:
+      value: |
+          Si vous avez une question, rendez-vous sur notre serveur Discord: https://discord.gg/q6eMWS2
+          Merci de prendre le temps de remplir ce signalement de bug :pray::skin-tone-3:
+  - type: dropdown
+    id: bot
+    attributes:
+      label: Bot(s) concerné(s) par le bug
+      description: Conseil: vous pouvez sélectionner plusieurs bots
+      options:
+        - KoroïMod
+        - Support KoroïMod
+        # - Mahoku
+      multiple: true
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Partie(s) du bot concernée(s) par le bug
+      description: Conseil: vous pouvez sélectionner plusieurs parties du bot
+      options:
+        - Le bot entier
+        - Les commandes slash
+        - Le dashboard
+        - Les automations
+        - Autre
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description du problème
+      description: |
+        Décrivez le problème de la façon la plus détaillée possible.
+        Votre explication doit être:
+        - Concise - Fournissez le moins d'informations possible pour reproduire le bug
+        - Complète - Fournissez toutes les étapes dont quelqu'un d'autre a besoin pour reproduire le bug
+        - Reproductible - Testez les étapes que vous vous apprêtez à fournir pour être sûr qu'elles reproduisent le bug
+
+        Conseil: Vous pouvez joindre des images ou des fichiers en cliquant sur cette zone pour la mettre en surbrillance, puis en y faisant glisser des fichiers.
+      placeholder: |
+        Étapes pour reproduire le bug:
+        1. Créer un salon #salon
+        2. Faire la commande /command
+        3. Modifier le salon #salon
+        4. Retirer le bot du serveur
+        5. Ré-inviter le bot sur le serveur
+        6. Faire la commande /command
+        7. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Système d'exploitation
+      description: |
+        Sur quel(s) système(s) d'exploitation rencontrez-vous ce problème?
+        Si vous ne connaissez pas votre système d'exploitation, ne sélectionnez rien.
+        
+        Conseil: vous pouvez sélectionner plusieurs systèmes d'exploitation
+      options:
+        - Windows
+        - Android
+        - GNU/Linux
+        - macOS
+        - iOS
+        - Autre
+  - type: checkboxes
+    id: web
+    attributes:
+      label: Version web de Discord
+      description: Cochez cette case si vous utilisez Discord sur votre navigateur
+      options:
+        - label: J'utilise la version web de Discord
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priorité du problème
+      description: Soyez réaliste. Si vous avez besoin de développer votre raisonnement, veuillez utiliser le champ Description du problème ci-dessus.
+      options:
+        - Faible (peu gênant)
+        - Moyenne (devrait être corrigé bientôt)
+        - Haute (attention immédiate nécessaire)
+        - Problème de sécurité (sécurité compromise, doit être corrigé immédiatement)
+    validations:
+      required: true
+  - type: input
+    id: dev-release
+    attributes:
+      label: J'ai testé ce problème sur une version de développement (alpha ou beta)
+      placeholder: d23280c
+      description: |
+        Le bug est peut-être déjà corrigé dans une version de dev. Vous pouvez le tester sur une de ces versions pour savoir s'il a été résolu.
+        Il n'est pas obligatoire de tester le problème sur une version de développement, mais cela nous aiderait grandement.
+        Si vous l'avez testé sur une version de développement, utilisez la commande `/dev-version`, puis insérez le résultat ici.
