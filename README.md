@@ -1,6 +1,6 @@
-[![Contributors][contributors-shield]][contributors-url]
+[![Contributeurs][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+[![Étoiles][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge&logo=github
