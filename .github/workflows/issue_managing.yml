@@ -27,49 +27,49 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Adding mod label
-        if: contains($data.bot-s-concerne-s-par-le-bug.text, 'KoroïMod')
+        if: contains(env.data.bot-s-concerne-s-par-le-bug.text, 'KoroïMod')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mod
       - name: Adding bot support label
-        if: contains($data.bot-s-concerne-s-par-le-bug.text, 'Bot Support')
+        if: contains(env.data.bot-s-concerne-s-par-le-bug.text, 'Bot Support')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: bot support
       - name: Adding mahoku label
-        if: contains($data.bot-s-concerne-s-par-le-bug.text, 'Mahoku')
+        if: contains(env.data.bot-s-concerne-s-par-le-bug.text, 'Mahoku')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mahoku
       - name: Adding web label
-        if: contains($data.version-web-de-discord.text, '[x]')
+        if: contains(env.data.version-web-de-discord.text, '[x]')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: web
       - name: Adding priority label
-        if: contains($data.priorite-du-probleme.text, 'Faible')
+        if: contains(env.data.priorite-du-probleme.text, 'Faible')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité faible
       - name: Adding priority label
-        if: contains($data.priorite-du-probleme.text, 'Moyenne')
+        if: contains(env.data.priorite-du-probleme.text, 'Moyenne')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité moyenne
       - name: Adding priority label
-        if: contains($data.priorite-du-probleme.text, 'Haute')
+        if: contains(env.data.priorite-du-probleme.text, 'Haute')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité haute
       - name: Adding proprity label
-        if: contains($data.priorite-du-probleme.text, 'Problème de sécurité')
+        if: contains(env.data.priorite-du-probleme.text, 'Problème de sécurité')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: problème de sécurité
       - uses: actions-ecosystem/action-regex-match@v2
         id: match
         with:
-          text: $data.j-ai-teste-ce-probleme-sur-une-version-de-developpement-alpha-ou-beta.text
+          text: env.data.j-ai-teste-ce-probleme-sur-une-version-de-developpement-alpha-ou-beta.text
           regex: '^[A-Fa-f0-9]{7}$'
       - name: Adding dev label
         if: ${{ steps.regex-match.outputs.match != '' }}
@@ -86,17 +86,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Adding mod label
-        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'KoroïMod')
+        if: contains(env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'KoroïMod')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mod
       - name: Adding bot support label
-        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'Bot Support')
+        if: contains(env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'Bot Support')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: bot support
       - name: Adding mahoku label
-        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'Mahoku')
+        if: contains(env.data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, 'Mahoku')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mahoku
