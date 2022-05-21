@@ -16,9 +16,9 @@ body:
       label: Bot(s) concerné(s) par le bug
       description: "Conseil: vous pouvez sélectionner plusieurs bots"
       options:
+      # - Mahoku
         - KoroïMod
-        - Support KoroïMod
-        # - Mahoku
+        - Bot Support
       multiple: true
     validations:
       required: true
