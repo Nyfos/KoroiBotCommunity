@@ -4,7 +4,7 @@
 [![Étoiles][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge&logo=github
+[contributors-shield]: https://img.shields.io/github/contributors/Nyfos/KoroiBotCommunity.svg?style=for-the-badge&logo=github
 [contributors-url]: https://github.com/Nyfos/KoroiBotCommunity/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Nyfos/KoroiBotCommunity.svg?style=for-the-badge&logo=github
 [forks-url]: https://github.com/Nyfos/KoroiBotCommunity/network/members
