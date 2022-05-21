@@ -69,7 +69,7 @@ jobs:
       - uses: actions-ecosystem/action-regex-match@v2
         id: match
         with:
-          text: ${{ $data.j-ai-teste-ce-probleme-sur-une-version-de-developpement-alpha-ou-beta.text }}
+          text: $data.j-ai-teste-ce-probleme-sur-une-version-de-developpement-alpha-ou-beta.text
           regex: '^[A-Fa-f0-9]{7}$'
       - name: Adding dev label
         if: ${{ steps.regex-match.outputs.match != '' }}
