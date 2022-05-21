@@ -1,0 +1,47 @@
+name: Demande de fonctionnalité
+description: Demander une nouvelle fonctionnalité
+labels: [demande de fonctionnalité]
+body:
+  - type: markdown
+    attributes:
+      value: Si vous avez une question, rendez-vous sur notre serveur Discord: https://discord.gg/q6eMWS2
+  - type: dropdown
+    id: bot
+    attributes:
+      label: Pour quel(s) bot(s) cette demande de fonctionnalité est-elle destinée?
+      description: "Conseil: vous pouvez sélectionner plusieurs bots"
+      options:
+        - KoroïMod
+        - Support KoroïMod
+      # - Mahoku
+      multiple: true
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Fonctionnalité
+      description: Une description claire et concise de la nature du problème ou de la fonctionnalité que vous souhaitez implémenter.
+      placeholder: Je suis toujours frustré quand..., Discord a récemment publié..., Un bon ajout serait...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution ou implémentation idéale
+      description: Une description claire et concise de ce que vous voulez qu'il se passe.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Solutions ou implémentations alternatives
+      description: Une description claire et concise de toutes les solutions ou fonctionnalités alternatives que vous avez envisagées.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Contexte supplémentaire
+      description: |
+        Tout autre contexte, captures d'écran, fichiers ou dessins qui nous aideraient à comprendre votre demande de fonctionnalité.
+        
+        Conseil: Vous pouvez joindre des images ou des fichiers en cliquant sur cette zone pour la mettre en surbrillance, puis en y faisant glisser des fichiers.
