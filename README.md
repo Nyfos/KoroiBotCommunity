@@ -14,4 +14,4 @@
 [issues-url]: https://github.com/Nyfos/KoroiBotCommunity/issues
 
 # Serveur Discord
-[![Rejoindre][https://ptb.discord.com/api/guilds/616371260569681930/widget.png?style=banner2]][https://discord.gg/q6eMWS2]
+[![https://ptb.discord.com/api/guilds/616371260569681930/widget.png?style=banner2]][https://discord.gg/q6eMWS2]
