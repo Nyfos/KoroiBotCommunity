@@ -33,6 +33,7 @@ body:
         - Le dashboard
         - Les automations
         - Autre
+      multiple: true
     validations:
       required: true
   - type: textarea
