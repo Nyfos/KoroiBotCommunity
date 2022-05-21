@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Parsing issue form body # GitHub Issue Forms Body Parser
         id: parse
-        uses: zentered/issue-forms-body-parser@v1.3.0
+        uses: zentered/issue-forms-body-parser@v1.4.3
   bug_report:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'bug')
