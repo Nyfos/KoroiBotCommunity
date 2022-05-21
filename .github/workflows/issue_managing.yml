@@ -20,8 +20,10 @@ jobs:
   bug_report:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, "bug")
+    needs:
+      - process
     env:
-      data: ${{ jobs.process.steps.parse.outputs.data }}
+      data: ${{ needs.process.steps.parse.outputs.data }}
     steps:
       - uses: actions/checkout@v2
       - name: Adding mod label
@@ -77,8 +79,10 @@ jobs:
   feature_request:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, "demande de fonctionnalité")
+    needs:
+      - process
     env:
-      data: ${{ jobs.process.steps.parse.outputs.data }}
+      data: ${{ needs.process.steps.parse.outputs.data }}
     steps:
       - uses: actions/checkout@v2
       - name: Adding mod label
