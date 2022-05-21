@@ -1,82 +1,21 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Issues Managing
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   issues:
-    types: [ opened ]
+    types:
+      - labeled
+      - edited
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  feature_request:
+  process:
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.event.issue.title, [FEATURE_REQUEST]) }}
     steps:
-      - name: Thank user
-        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            **Merci d'avoir pris le temps de publier une suggestion.** :pray:
-            Votre demande va être prise en charge dans les plus brefs délais par notre équipe.
-      - name: Add warning comment
-        if: ${{ github.event.issue.body == "Votre demande de fonctionnalité est-elle liée à un problème? Soyez précis.\nUne description claire et concise du problème. Ex. Je suis toujours frustré quand [...]\n\nDécrivez la solution que vous aimeriez avoir\nUne description claire et concise de ce que vous voulez faire.\nDécrivez les alternatives que vous avez envisagées\nUne description claire et concise de toutes les solutions ou fonctionnalités alternatives que vous avez envisagées.\n\nInformations supplémentaires\nAjoutez n'importe quelle autre information concernant la fonctionnalité ici" || endsWith(github.event.issue.title, " '...'") }}
-        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            **Attention!** :hammer_and_wrench:
-            
-            Votre demande n'a pas été formulée correctement.
-            Merci de vérifier que:
-            
-            1. Le titre de votre demande a été modifié pour inclure une courte phrase explicant votre demande.
-            *Exemple:
-            `[FEATURE_REQUEST]: Ajout d'une commande pour afficher le nombre de bans`*
-
-            2. La description de votre demande contient les informations nécessaires à son traitement.
-            Il faut laisser le texte entre astérisques mais remplacer le texte qui se trouve en dessous.
-            *Exemple:
-            `**Votre demande de fonctionnalité est-elle liée à un problème? Soyez précis.**`
-            `Il n'y a actuellement aucun moyen de savoir combien d'utilisateurs ont été bannis.`*
-            
-            Merci beaucoup de votre patience.
-
-  bug:
-    runs-on: ubuntu-latest
-    if: ${{ startsWith(github.event.issue.title, "[BUG]") }}
-    steps:
-      - name: Thank user
-        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            **Merci d'avoir pris le temps de nous avertir qu'un bug était survenu.** :pray:
-            Votre demande va être prise en charge dans les plus brefs délais par notre équipe.
-      - name: Add warning comment
-        if: ${{ github.event.issue.body == "**Description du bug**\nUne description claire et concise du bug\n\n**Le bug concerne-t-il une commande, si oui, laquelle ?**\nOui, il concerne la commande `/...`\n\n**Comment reproduire le bug**\n1. Créer un salon '...'\n2. Faire la commande '....'\n3. Modifier le salon '....'\n4. Supprimer le bot\n5. Ajouter le bot\n6. Faire la commande\n7. '...'\n\n**Comportement prévisible**\nUne description claire et concise de ce que vous attendiez.\n\n**Screenshots**\nEn cas de besoin, ajoutez des captures d'écran pour expliquer votre problème.\n\n**Informations supplémentaires**\nAjoutez n'importe quelle autre information concernant le problème ici" || endsWith(github.event.issue.title, " '...'") }}
-        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            **Attention!** :hammer_and_wrench:
-            
-            Votre signalement n'a pas été formulé correctement.
-            Merci de vérifier que:
-            
-            1. Le titre de votre signalement a été modifié pour inclure une courte phrase explicant le problème.
-            *Exemple:
-            `[BUG]: La commande /ban affiche les avertissements`*
-
-            2. La description de votre signalement contient les informations nécessaires à son traitement.
-            Il faut laisser le texte entre astérisques mais remplacer le texte qui se trouve en dessous.
-            *Exemple:
-            `**Description du bug**`
-            `La commande \`/ban\` affiche les avertissements d'un utilisateur.`*
-            
-            Merci beaucoup de votre patience.
+      - name: Parsing issue form body # GitHub Issue Forms Body Parser
+        id: parse
+        uses: zentered/issue-forms-body-parser@v1.3.0
+      - name: Echo
+        run: echo ${{ steps.parse.outputs.data }}
