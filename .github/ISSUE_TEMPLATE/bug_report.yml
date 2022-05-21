@@ -98,7 +98,7 @@ body:
     id: dev-release
     attributes:
       label: J'ai testé ce problème sur une version de développement (alpha ou beta)
-      placeholder: d23280c
+      placeholder: a.d23280c
       description: |
         Le problème est peut-être déjà résolu dans une version de dev. Vous pouvez le tester sur une de ces versions pour savoir s'il a été résolu.
         Il n'est pas obligatoire de tester le problème sur une version de développement, mais cela nous aiderait grandement.
