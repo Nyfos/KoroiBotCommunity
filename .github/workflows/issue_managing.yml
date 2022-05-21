@@ -27,7 +27,7 @@ jobs:
     env:
       data: ${{ needs.process.steps.parse.outputs.data }}
     steps:
-      - run: echo needs.process.outputs.data
+      - run: echo ${{ needs.process.outputs.data }}
       - uses: actions/checkout@v2
       - name: Adding mod label
         if: contains(${{ env.data.bot-s-concerne-s-par-le-bug.text }}, 'KoroïMod')
