@@ -14,4 +14,4 @@
 [issues-url]: https://github.com/Nyfos/KoroiBotCommunity/issues
 
 # Serveur Discord
-[<img src="http://www.google.com.au/images/nav_logo7.png">](http://google.com.au/)
+[<img src="https://ptb.discord.com/api/guilds/616371260569681930/widget.png?style=banner2">](https://discord.gg/q6eMWS2)
