@@ -19,7 +19,7 @@ jobs:
         uses: zentered/issue-forms-body-parser@v1.3.0
   bug_report:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, "bug")
+    if: contains(github.event.issue.labels.*.name, bug)
     needs:
       - process
     env:
@@ -27,42 +27,42 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Adding mod label
-        if: contains($data.bot-s-concerne-s-par-le-bug.text, "KoroïMod")
+        if: contains($data.bot-s-concerne-s-par-le-bug.text, KoroïMod)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mod
       - name: Adding bot support label
-        if: contains($data.bot-s-concerne-s-par-le-bug.text, "Bot Support")
+        if: contains($data.bot-s-concerne-s-par-le-bug.text, Bot Support)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: bot support
       - name: Adding mahoku label
-        if: contains($data.bot-s-concerne-s-par-le-bug.text, "Mahoku")
+        if: contains($data.bot-s-concerne-s-par-le-bug.text, Mahoku)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mahoku
       - name: Adding web label
-        if: contains($data.version-web-de-discord.text, "[x]")
+        if: contains($data.version-web-de-discord.text, [x])
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: web
       - name: Adding priority label
-        if: contains($data.priorite-du-probleme.text, "Faible")
+        if: contains($data.priorite-du-probleme.text, Faible)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité faible
       - name: Adding priority label
-        if: contains($data.priorite-du-probleme.text, "Moyenne")
+        if: contains($data.priorite-du-probleme.text, Moyenne)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité moyenne
       - name: Adding priority label
-        if: contains($data.priorite-du-probleme.text, "Haute")
+        if: contains($data.priorite-du-probleme.text, Haute)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité haute
       - name: Adding proprity label
-        if: contains($data.priorite-du-probleme.text, "Problème de sécurité")
+        if: contains($data.priorite-du-probleme.text, Problème de sécurité)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: problème de sécurité
@@ -78,7 +78,7 @@ jobs:
           labels: dev
   feature_request:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, "demande de fonctionnalité")
+    if: contains(github.event.issue.labels.*.name, demande de fonctionnalité)
     needs:
       - process
     env:
@@ -86,17 +86,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Adding mod label
-        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, "KoroïMod")
+        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, KoroïMod)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mod
       - name: Adding bot support label
-        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, "Bot Support")
+        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, Bot Support)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: bot support
       - name: Adding mahoku label
-        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, "Mahoku")
+        if: contains($data.pour-quel-s-bot-s-cette-demande-de-fonctionnalite-est-elle-destinee.text, Mahoku)
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mahoku
