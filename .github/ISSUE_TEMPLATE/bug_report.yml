@@ -99,6 +99,6 @@ body:
       label: J'ai testé ce problème sur une version de développement (alpha ou beta)
       placeholder: d23280c
       description: |
-        Le bug est peut-être déjà corrigé dans une version de dev. Vous pouvez le tester sur une de ces versions pour savoir s'il a été résolu.
+        Le problème est peut-être déjà résolu dans une version de dev. Vous pouvez le tester sur une de ces versions pour savoir s'il a été résolu.
         Il n'est pas obligatoire de tester le problème sur une version de développement, mais cela nous aiderait grandement.
         Si vous l'avez testé sur une version de développement, utilisez la commande `/dev-version`, puis insérez le résultat ici.
