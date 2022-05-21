@@ -17,6 +17,7 @@ jobs:
       - name: Parsing issue form body # GitHub Issue Forms Body Parser
         id: parse
         uses: zentered/issue-forms-body-parser@v1.4.3
+      - run: echo ${{ steps.parse.outputs.data }}
   bug_report:
     runs-on: ubuntu-latest
     if: contains(github.event.issue.labels.*.name, 'bug')
@@ -25,13 +26,9 @@ jobs:
     env:
       data: ${{ needs.process.steps.parse.outputs.data }}
     steps:
-      - run: echo ${{ parseJSON(env.data) }}
-      - run: echo ${{ parseJSON(needs.process) }}
-      - run: echo ${{ parseJSON(needs.process.steps.parse.outputs.data) }}
-      - run: echo ${{ parseJSON(needs.process.steps.parse.outputs) }}
       - uses: actions/checkout@v2
       - name: Adding mod label
-        if: contains(env.data.bot-s-concerne-s-par-le-bug.text, 'KoroïMod')
+        if: contains(${{ env.data.bot-s-concerne-s-par-le-bug.text }}, 'KoroïMod')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mod
