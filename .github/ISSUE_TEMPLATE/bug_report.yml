@@ -9,7 +9,7 @@ body:
     attributes:
       value: |
           Si vous avez une question, rendez-vous sur notre serveur Discord: https://discord.gg/q6eMWS2
-          Merci de prendre le temps de remplir ce signalement de bug :pray::skin-tone-3:
+          Merci de prendre le temps de remplir ce signalement de bug 🙏🏽
   - type: dropdown
     id: bot
     attributes:
