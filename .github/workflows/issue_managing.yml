@@ -36,32 +36,32 @@ jobs:
         with:
           labels: bot support
       - name: Adding mahoku label
-        if: contains(${{ env.data.bot-s-concerne-s-par-le-bug.text, 'Mahoku')
+        if: contains(${{ env.data.bot-s-concerne-s-par-le-bug.text }}, 'Mahoku')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: mahoku
       - name: Adding web label
-        if: contains(${{ env.data.version-web-de-discord.text, '[x]')
+        if: contains(${{ env.data.version-web-de-discord.text }}, '[x]')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: web
       - name: Adding priority label
-        if: contains(${{ env.data.priorite-du-probleme.text, 'Faible')
+        if: contains(${{ env.data.priorite-du-probleme.text }}, 'Faible')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité faible
       - name: Adding priority label
-        if: contains(${{ env.data.priorite-du-probleme.text, 'Moyenne')
+        if: contains(${{ env.data.priorite-du-probleme.text }}, 'Moyenne')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité moyenne
       - name: Adding priority label
-        if: contains(${{ env.data.priorite-du-probleme.text, 'Haute')
+        if: contains(${{ env.data.priorite-du-probleme.text }}, 'Haute')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: priorité haute
       - name: Adding proprity label
-        if: contains(${{ env.data.priorite-du-probleme.text, 'Problème de sécurité')
+        if: contains(${{ env.data.priorite-du-probleme.text }}, 'Problème de sécurité')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: problème de sécurité
