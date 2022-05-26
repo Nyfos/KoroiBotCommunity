@@ -1,5 +1,5 @@
 name: Traduction incorrecte
-description: "Signaler une traduction incorrecte ou un texte ne s'affichant pas"
+description: Signaler une traduction incorrecte ou un texte ne s'affichant pas
 labels: [traduction]
 assignees:
   - Nyfos
@@ -16,6 +16,20 @@ body:
       # - Mahoku
         - KoroïMod
         - Bot Support
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: La langue avec laquelle vous rencontrez ce problème
+      options:
+        - Français
+        - English
+        - Español
+        - Deutsch
+        - Itialiano
+        - 日本語
+        - Autre
     validations:
       required: true
   - type: input
