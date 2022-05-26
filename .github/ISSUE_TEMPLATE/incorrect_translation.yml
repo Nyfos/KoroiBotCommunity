@@ -1,0 +1,45 @@
+name: Traduction incorrecte
+description: Signaler une traduction incorrecte ou un texte ne s'affichant pas
+title: ""
+labels: [traduction]
+assignees:
+  - Nyfos
+body:
+  - type: markdown
+    attributes:
+      value: |
+          Si vous avez une question, rendez-vous sur notre serveur Discord: https://discord.gg/q6eMWS2
+  - type: dropdown
+    id: bot
+    attributes:
+      label: Bot concerné par le problème
+      options:
+      # - Mahoku
+        - KoroïMod
+        - Bot Support
+    validations:
+      required: true
+  - type: input
+    id: command
+    attributes:
+      label: Où rencontrez-vous ce problème?
+      description: La commande ou l'élément au sein duquel ce problème survient
+      placeholder: /ping (si le problème survient dans la commande /ping)
+    validations:
+      required: true
+  - type: input
+    id: displayed
+    attributes:
+      label: Texte affiché
+      description: Ce que vous voyez actuellement
+      placeholder: %ping.latency%
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: Texte attendu
+      description: Ce qui, selon vous, devrait être affiché
+      placeholder: Latence du bot
+    validations:
+      required: true
