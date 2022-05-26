@@ -31,7 +31,7 @@ body:
     attributes:
       label: Texte affiché
       description: Ce que vous voyez actuellement
-      placeholder: %ping.latency%
+      placeholder: "%ping.latency%"
     validations:
       required: true
   - type: input
