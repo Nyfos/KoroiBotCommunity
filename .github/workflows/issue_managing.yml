@@ -31,7 +31,7 @@ jobs:
         with:
           labels: mod
       - name: Adding bot support label
-        if: contains(${{ env.data.bot-s-concerne-s-par-le-bug.text, 'Bot Support')
+        if: contains(${{ env.data.bot-s-concerne-s-par-le-bug.text }}, 'Bot Support')
         uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: bot support
