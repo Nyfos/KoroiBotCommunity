@@ -1,4 +1,4 @@
-name: Signaler un bug
+name: Signalement de bug
 description: Signaler un comportement incorrect ou inattendu
 title: "[BUG]: "
 labels: [bug]
