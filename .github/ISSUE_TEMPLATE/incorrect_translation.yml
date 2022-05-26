@@ -1,6 +1,5 @@
 name: Traduction incorrecte
-description: Signaler une traduction incorrecte ou un texte ne s'affichant pas
-title: ""
+description: "Signaler une traduction incorrecte ou un texte ne s'affichant pas"
 labels: [traduction]
 assignees:
   - Nyfos
